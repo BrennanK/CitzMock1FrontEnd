@@ -1,0 +1,41 @@
+<h1>List of Items</h1>
+
+<div class="container">
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h2>Order Here</h2>
+            <form [formGroup]="foodForm">
+                
+                <div class="form-group">
+                    <input class="form-check-input form-control" type="checkbox" value="" id="flexCheckDefault" formControlName="item1" (change)="incrementOrDecrement($event,sampleFood[0])">
+                    <label data-bs-toggle="tooltip" data-bs-placement="top" title={{sampleFood[0].description}}>{{sampleFood[0].name}} <label>{{ sampleFood[0].price | currency:'USD' }}</label></label>
+                </div>
+            
+                <div class="form-group">
+                    <input class="form-check-input form-control" type="checkbox" value="" id="flexCheckDefault" formControlName="item2" (change)="incrementOrDecrement($event,sampleFood[1])">
+                    <label data-bs-toggle="tooltip" data-bs-placement="top" title={{sampleFood[1].description}}>{{sampleFood[1].name}}<label>{{ sampleFood[1].price | currency:'USD' }}</label></label>
+                </div>
+
+                <div class="form-group">
+                    <input class="form-check-input form-control" type="checkbox" value="" id="flexCheckDefault" formControlName="item3" (change)="incrementOrDecrement($event,sampleFood[2])">
+                    <label data-bs-toggle="tooltip" data-bs-placement="top" title={{sampleFood[2].description}}>{{sampleFood[2].name}} <label>{{ sampleFood[2].price | currency:'USD' }}</label></label>
+                </div>
+
+                <div class="form-group">
+                    <input class="form-check-input form-control" type="checkbox" value="" id="flexCheckDefault" formControlName="item4" (change)="incrementOrDecrement($event,sampleFood[3])">
+                    <label data-bs-toggle="tooltip" data-bs-placement="top" title={{sampleFood[3].description}}>{{sampleFood[3].name}}<label>{{ sampleFood[3].price | currency:'USD' }}</label></label>
+                </div>
+
+                <div class="form-group">
+                    <input class="form-check-input form-control" type="checkbox" value="" id="flexCheckDefault" formControlName="item5" (change)="incrementOrDecrement($event,sampleFood[4])">
+                    <label data-bs-toggle="tooltip" data-bs-placement="top" title={{sampleFood[4].description}}>{{sampleFood[4].name}}<label>{{ sampleFood[4].price | currency:'USD' }}</label></label>
+                </div>
+
+                <button class="btn btn-primary" [disabled]="itemsSelected == 0" (click)="orderPlacement()" [routerLink]='[""]'>Order now</button>
+
+            </form>
+        </div>
+    </div>
+
+</div>
